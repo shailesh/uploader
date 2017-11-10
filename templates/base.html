@@ -1,0 +1,15 @@
+{% extends "material/base.html" %}
+
+{% block title %}Data{% endblock %}
+
+{% block navbar %}
+  <nav>
+      <div class="nav-wrapper">
+      	<ul id="nav-mobile" class="left hide-on-med-and-down">
+		    <li><a href="{{ url_for('index') }}">Home</a></li>
+		    <li><a href="{{ url_for('upload') }}">Upload</a></li>
+		    <li><a href="{{ url_for('gallery') }}">Data</a></li>
+      	</ul>
+      </div>
+  </nav>
+{% endblock %}

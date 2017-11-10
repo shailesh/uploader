@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Header Start -->
+
+    <div class="row" style="text-align: center;">
+        <h1>Data Injection</h1>
+        <p>Hi There, Welcome !!!</p>
+        <p><a href="{{ url_for('upload') }}" class="login">Login</a> to inject files or head over to the <a href="{{ url_for('gallery') }}"> Data </a> to view saved files.</p>
+    	<div class="progress">
+      	<div class="indeterminate"></div>
+  		</div>
+    </div>
+
+<!-- Header End -->
+
+<!-- Form Start -->
+
+<div class="row">
+	<div class="container" style="text-align: center;">
+
+    	<form id="form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+    	   <div class="form-group">
+       		<h for="images" style="color: #00ccff"> <Strong> PLease select your file </h></label> <br> <br>
+        		<input type="file" id="images" name="images" accept="" multiple> <br>
+
+				<!-- Dropdown here -->
+
+				<div class = "col s12"> <br>
+				<h style="color: #00ccff" >Data Types</h>
+					<select>
+						<option value = "" disabled selected>Undefined</option>
+						<option value = "1">Product Master</option>
+						<option value = "2">Sales Master</option>
+						<option value = "3">Sales Transaction</option>
+					</select>               
+				</div> <br>
+
+				<!-- Chckbox here -->
+
+				<div class="intro-text"> <br>
+					<h style="color: #00ccff">Idetify the column</h>
+
+					<p>
+						<input type="checkbox" id="test5" />
+						<label for="test5">Style Id</label>
+						<input id="text" type="text" placeholder="Column containing name">
+					</p>
+
+					<p>
+						<input type="checkbox" id="test6" />
+						<label for="test6">Store Id</label>
+						<input id="text" type="text" placeholder="Column containing name">
+					</p>
+					<p>
+						<input type="checkbox" id="test7" />
+						<label for="test7">Store</label>
+						<input id="text" type="text" placeholder="Column containing name">
+					</p>
+				</div>
+
+
+				<!-- Date-picker here -->
+
+				<div class="col s12"> <br>	
+					<h style="color: #00ccff">PLease choose a specific date here for the file generated </h>
+					<input type="date" class="datepicker" placeholder="Please choose the date whenever it was filed" > 
+				</div>
+
+
+				<!-- Submit Button here -->
+
+				<div class="col s12"> <br>
+					<input type="submit" value="Submit" id="button" class="btn waves-effect waves-light">
+				</div>		
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Header End -->
+
+<!-- Footer Start-->
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div style="margin-left: 30px;">
+      	© 2016 Stylumia Intelligence Technology Pvt Ltd 
+        <a style="margin-right: 30px" class="grey-text text-lighten-4 right" href="#!">support@stylumia.com</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Footer End -->
+
+<!-- Scripting and Stylsheets here -->
+
+<meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+<link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+<script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+<script type = "text/javascript" src = "public/select.js"></script> 
+<script type = "text/javascript" src = "public/alert.js"></script>
+<script type = "text/javascript" src = "public/datepicker.js"></script> 
+
+
+<!-- Scripting and Stylsheets End -->
+
+{% endblock %}
